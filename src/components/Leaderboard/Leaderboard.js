@@ -28,7 +28,7 @@ const Leaderboard = ({ setSearchInput, students }) => {
       <div className="controls">
         <h1>Leaderboard</h1>
         <button onClick={() => setShowAll(!showAll)}>
-          Show {showAll ? 'less' : 'more'}
+          Show {showAll ? 'top 3' : 'all'}
         </button>
       </div>
       <div className="content">
