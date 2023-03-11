@@ -12,6 +12,7 @@ function App() {
   const [studentData, setStudentData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [searchInput, setSearchInput] = useState('');
 
   useEffect(() => {
     console.log('<App /> useEffect() fired');
@@ -54,7 +55,13 @@ function App() {
     } else if (error) {
       return <Error error={error} />;
     } else {
-      return <StudentList studentData={studentData} />;
+      return (
+        <StudentList
+          studentData={studentData}
+          searchInput={searchInput}
+          setSearchInput={setSearchInput}
+        />
+      );
     }
   };
   console.log(
@@ -62,7 +69,7 @@ function App() {
   );
   return (
     <div className="App">
-      <Leaderboard students={studentData} />
+      <Leaderboard students={studentData} setSearchInput={setSearchInput} />
       <Container center={Boolean(error || loading)} scroll={false}>
         {renderContent()}
       </Container>

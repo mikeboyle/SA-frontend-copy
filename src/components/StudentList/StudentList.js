@@ -3,10 +3,7 @@ import StudentCard from '../StudentCard/StudentCard';
 
 import './StudentList.css';
 
-const StudentList = ({ studentData }) => {
-  // When I type in the input, I should see filtered results by name
-  const [searchInput, setSearchInput] = useState('');
-
+const StudentList = ({ searchInput, setSearchInput, studentData }) => {
   // Keep track of which students should have expanded cards
   // Possible data types:
   // - array of ids ["1", "3"]
@@ -103,6 +100,7 @@ const StudentList = ({ studentData }) => {
           placeholder="Search by name"
           onChange={handleChange}
         />
+        <button onClick={() => setSearchInput('')}>Clear</button>
         <button onClick={handleExpandAll}>Expand All</button>
         <button onClick={handleCollapseAll}>Collapse All</button>
       </div>

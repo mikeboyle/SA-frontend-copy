@@ -10,7 +10,7 @@ const studentsWithAverage = (students) =>
     return result;
   }, []);
 
-const Leaderboard = ({ students }) => {
+const Leaderboard = ({ setSearchInput, students }) => {
   const [showAll, setShowAll] = useState(false);
   if (!students.length) {
     return null;
@@ -37,7 +37,16 @@ const Leaderboard = ({ students }) => {
             const { average, first_name, last_name, id } = student;
             return (
               <li key={id}>
-                {first_name} {last_name}: {average}%
+                <span
+                  className="open-link"
+                  onClick={() => {
+                    console.log('fooo');
+                    setSearchInput(`${first_name} ${last_name}`);
+                  }}
+                >
+                  {first_name} {last_name}
+                </span>
+                {average}%
               </li>
             );
           })}

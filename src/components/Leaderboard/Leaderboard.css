@@ -3,8 +3,7 @@
     padding: 1rem;
     background-color: white;
     border-radius: 5px;
-    max-height: 20vh;
-    min-height: 10vh;
+    height: 20vh;
 }
 
 .Leaderboard .controls {
@@ -13,7 +12,7 @@
 }
 
 .Leaderboard .content {
-    height: calc(20vh - 60px);
+    height: calc(20vh - 30px);
     overflow-y: scroll;
 }
 
@@ -21,6 +20,14 @@
     height: 50%;
     background: none;
     border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.Leaderboard .open-link {
+    color: blue;
+    text-decoration: underline;
+    display: inline-block;
+    min-width: 200px;
     cursor: pointer;
 }
 
