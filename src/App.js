@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Container from './components/Container/Container';
 import Error from './components/Error/Error';
+import Leaderboard from './components/Leaderboard/Leaderboard';
 import Loading from './components/Loading/Loading';
 import StudentList from './components/StudentList/StudentList';
 
@@ -61,6 +62,7 @@ function App() {
   );
   return (
     <div className="App">
+      <Leaderboard students={studentData} />
       <Container center={Boolean(error || loading)} scroll={false}>
         {renderContent()}
       </Container>
