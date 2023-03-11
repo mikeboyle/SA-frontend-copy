@@ -23,6 +23,10 @@
     cursor: pointer;
 }
 
+.Leaderboard li {
+    margin: 0.25rem auto;
+}
+
 .Leaderboard .open-link {
     color: blue;
     text-decoration: underline;
